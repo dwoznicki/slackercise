@@ -4,6 +4,8 @@ gem 'dotenv'
 # gem 'dotenv-rails'
 gem 'httparty'
 
+gem 'bootstrap-sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgreSQL as the database for Active Record
