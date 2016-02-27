@@ -1,11 +1,44 @@
 require 'slack-ruby-bot'
 require 'pp'
 require 'httparty'
+require 'dotenv'
+Dotenv.load
+# require_relative '.env'
 
 class PongBot < SlackRubyBot::Bot
   command 'ping' do |client, data, match|
     client.say(text: 'SLACKERCISE RULLLEEESSSS', channel: data.channel)
+    pp ENV["SLACKERCISE_BOT_KEY"]
+    # client.users.each do |key, value|
+    # end
+
   end
+
+  command 'init' do |client, data, match|
+    client.say(text: 'SLACKERCISE RULLLEEESSSS', channel: data.channel)
+    p "*" * 50
+    p "DATA:"
+    pp data[:user]
+    p "*" * 50
+    p "*" * 50
+    p "CLIENT:"
+    # pp client.users[data[:user]]
+    pp client.users
+    p "*" * 50
+    p "*" * 50
+    p "MATCH:"
+    pp match
+    p "*" * 50
+    p "*" * 50
+    client.users.each do |key, value|
+
+# https://slack.com/api/channels.create?token=ENV["SLACKERCISE_BOT_KEY"]&name=slackercise-club%20&pretty=1
+
+
+    end
+
+  end
+
 
   command 'addme' do |client, data, match|
     # p "*" * 50
@@ -16,14 +49,15 @@ class PongBot < SlackRubyBot::Bot
     # p "CLIENT:"
     # # pp client.users[data[:user]]
     # pp client
-    user_data = client.users[data[:user]]
     # p "*" * 50
     # p "*" * 50
     # p "MATCH:"
     # pp match
     # p "*" * 50
     # p "*" * 50
-    p user_data
+
+
+    user_data = client.users[data[:user]]
     HTTParty.post("http://localhost:3000/users",
       body: {
         user: {
