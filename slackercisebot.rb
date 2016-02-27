@@ -16,29 +16,6 @@ class PongBot < SlackRubyBot::Bot
     end
   end
 
-  command 'init' do |client, data, match|
-    # client.say(text: 'SLACKERCISE RULLLEEESSSS', channel: data.channel)
-    # p "*" * 50
-    # p "DATA:"
-    # pp data[:user]
-    # p "*" * 50
-    # p "*" * 50
-    # p "CLIENT:"
-    # # pp client.users[data[:user]]
-    # pp client.users
-    # p "*" * 50
-    # p "*" * 50
-    # p "MATCH:"
-    # pp match
-    # p "*" * 50
-    # p "*" * 50
-    client.users.each do |key, value|
-
-    end
-
-  end
-
-
   command 'addme' do |client, data, match|
     user_data = client.users[data[:user]]
     HTTParty.post("http://localhost:3000/users",
