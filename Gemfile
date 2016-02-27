@@ -30,3 +30,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'slack-ruby-bot'
+
+gem 'dotenv-rails'
+
