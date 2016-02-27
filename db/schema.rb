@@ -17,10 +17,16 @@ ActiveRecord::Schema.define(version: 20160227015707) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.integer  "points",     default: 0
-    t.string   "username",               null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "points",         default: 0
+    t.string   "team_id"
+    t.string   "name",                       null: false
+    t.string   "real_name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "image_original"
+    t.string   "email"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
