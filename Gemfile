@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv'
+# gem 'dotenv-rails'
 gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,5 +35,4 @@ end
 
 gem 'slack-ruby-bot'
 
-gem 'dotenv-rails'
 
