@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-
+    p "$" * 50
+    p "USER BEING CREATED"
     @user = User.find_or_initialize_by(email: params[:user][:email])
 
     if @user.update_attributes!(user_params)
