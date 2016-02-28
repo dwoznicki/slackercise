@@ -3,7 +3,10 @@
 <ul>
 <% @users.each do |user| %>
 
-  <li><%= user.first_name %></li>
+  <li>
+	  <%= image_tag( user.image, class: "img-responsive") %>
+	  <%= user.name %>: <%= user.points %>
+  </li>
 
 <% end %>
 </ul>
