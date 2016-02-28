@@ -1,9 +1,36 @@
-<h1>Users</h1>
+<header class="header-image">
+  <div class="headline">
+      <div class="container">
+          <h2>CHECK OUT WHO IS KICKING BUTT</h2>
+      </div>
+  </div>
 
-<ul>
-<% @users.each do |user| %>
+</header>
 
-  <li><%= user.first_name %></li>
+<div class="container">
+  <h1>Leaderboard</h1>
+</div>
 
-<% end %>
-</ul>
+<div class="container">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+
+    <% @users.each_with_index do |user, index| %>
+
+      <tbody>
+        <tr>
+          <td><%= index + 1%></td>
+          <td><%= image_tag(user.image, class: "img-circle") %><%= user.real_name %></td>
+          <td><%= user.points %></td>
+        </tr>
+      </tbody>
+
+    <% end %>
+  </table>
+</div>
