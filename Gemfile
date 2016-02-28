@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dotenv'
-# gem 'dotenv-rails'
+gem 'dotenv-rails'
 gem 'httparty'
 
 gem 'bootstrap-sass'
